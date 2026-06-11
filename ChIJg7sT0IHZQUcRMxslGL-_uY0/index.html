@@ -10,18 +10,18 @@
   • Use ONLY public facts from the queue record (name, industry, city, rating,
     review_count, phone, address). Do NOT invent prices, staff names, awards,
     or hotlink the business's own photos/logos (licensing risk).
-  • #0ea5b7 : tasteful accent hex fitting the industry
+  • #b91c1c : tasteful accent hex fitting the industry
     (dental #0ea5b7, vet #0ea5b7, legal #1e3a8a, beauty #be185d, auto #b45309,
      restaurant #b91c1c, pharmacy #047857, default #2563eb).
-  • ÁR : 1–2 UPPERCASE letters from the business name (e.g. "Oliva
+  • PP : 1–2 UPPERCASE letters from the business name (e.g. "Oliva
     Étterem" -> "O", "Wladár Kisállat Klinika" -> "WK"). Shown big in the hero card.
-  • 🐾 : ONE tasteful emoji representing the trade, used as a faint
+  • 🍕 : ONE tasteful emoji representing the trade, used as a faint
     hero watermark AND the favicon (🐾 vet, 🦷 dental, 🍽️ restaurant, ☕ café,
     💇 hair, 💅 beauty, 💊 pharmacy, ⚖️ legal, 🔧 auto). Pick something restrained.
-  • Állatorvosi Rendelő Tímár utca – 4,8 csillag, 87 értékelés, III. kerület Óbuda. Kisállatok gondozása, Dr. Röhricht Tamás ellátásával. : 1 sentence, ~150 chars, includes city + rating.
-  • ★ <b>4,8</b> · 87 Google értékelés : if review_count > 0 ->  "★ {rating} · {review_count} Google értékelés"
+  • Pinocchio Pizzéria Óbuda – 4,8 csillag, 1128 értékelés. Autentikus toszkán recept szerint készített olasz pizza Budapest III. kerületében, Bécsi út 121. : 1 sentence, ~150 chars, includes city + rating.
+  • ★ <b>4,8</b> · 1 128 Google értékelés : if review_count > 0 ->  "★ {rating} · {review_count} Google értékelés"
                        else -> remove the whole <div class="badge">…</div> line.
-  • <a href="tel:+36209240009">06 20 924 0009</a> : if phone exists -> the tel: anchor shown below;
+  • <a href="tel:+36203184874">06 20 318 4874</a> : if phone exists -> the tel: anchor shown below;
                       else -> replace with an e-mail/contact line only.
   • SERVICES: exactly 3 <div class="card"> blocks tailored to the industry, each
     with a fitting emoji in <div class="ico">.
@@ -33,18 +33,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Állatorvosi Rendelő — Állatorvosi Rendelő Budapest</title>
-<meta name="description" content="Állatorvosi Rendelő Tímár utca – 4,8 csillag, 87 értékelés, III. kerület Óbuda. Kisállatok gondozása, Dr. Röhricht Tamás ellátásával.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+<title>Pinocchio Pizzéria — Pizzéria &amp; Kávézó Budapest</title>
+<meta name="description" content="Pinocchio Pizzéria Óbuda – 4,8 csillag, 1128 értékelés. Autentikus toszkán recept szerint készített olasz pizza Budapest III. kerületében, Bécsi út 121.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
 <!-- Link preview when the URL is shared in e-mail / messaging -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="hu_HU">
-<meta property="og:title" content="Állatorvosi Rendelő — Állatorvosi Rendelő Budapest">
-<meta property="og:description" content="Állatorvosi Rendelő Tímár utca – 4,8 csillag, 87 értékelés, III. kerület Óbuda. Kisállatok gondozása, Dr. Röhricht Tamás ellátásával.">
+<meta property="og:title" content="Pinocchio Pizzéria — Pizzéria &amp; Kávézó Budapest">
+<meta property="og:description" content="Pinocchio Pizzéria Óbuda – 4,8 csillag, 1128 értékelés. Autentikus toszkán recept szerint készített olasz pizza Budapest III. kerületében, Bécsi út 121.">
 <meta name="twitter:card" content="summary">
 <style>
   :root{
-    --accent:#0ea5b7;
+    --accent:#b91c1c;
     --ink:#0f172a; --muted:#64748b; --bg:#ffffff; --soft:#f1f5f9; --line:#e2e8f0;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -122,23 +122,23 @@
   <div class="ribbon">Mintaoldal</div>
 
   <header><div class="wrap nav">
-    <div class="logo">Állatorvosi Rendelő</div>
+    <div class="logo">Pinocchio Pizzéria</div>
     <a class="cta" href="#kapcsolat">Kapcsolat</a>
   </div></header>
 
   <section class="hero"><div class="wrap">
     <div>
-      <h1>Kisállatai egészsége<br>jó kezekben van<br><em>Budapest</em></h1>
-      <p class="lead">A Tímár utcai Állatorvosi Rendelő Budapest III. kerületében várja kisállatait, hétköznapokon és hétvégén is elérhető.</p>
-      <div class="badge">★ <b>4,8</b> · 87 Google értékelés</div>
+      <h1>Autentikus olasz pizza<br>Óbudán<br><em>Budapest</em></h1>
+      <p class="lead">A Pinocchio Pizzéria toszkán receptekkel és eredeti olasz alapanyagokkal varázsolja el vendégeit a Bécsi úton.</p>
+      <div class="badge">★ <b>4,8</b> · 1 128 Google értékelés</div>
       <div class="hero-actions">
         <a class="btn primary" href="#kapcsolat">Időpontot kérek</a>
         <a class="btn ghost" href="#szolgaltatasok">Szolgáltatásaink</a>
       </div>
     </div>
     <div class="brandcard" aria-hidden="true">
-      <span class="mono">ÁR</span>
-      <span class="glyph">🐾</span>
+      <span class="mono">PP</span>
+      <span class="glyph">🍕</span>
     </div>
   </div></section>
 
@@ -147,29 +147,29 @@
     <h2>Szolgáltatásaink</h2>
     <div class="grid">
       <!-- AGENT: write exactly 3 industry-specific cards; pick a fitting emoji for each .ico -->
-      <div class="card"><div class="ico">🩺</div><h3>Általános vizsgálat</h3><p>Teljes fizikális vizsgálat és szükség esetén laborvizsgálat, röntgen, diagnózis és kezelési javaslat.</p></div>
-      <div class="card"><div class="ico">💉</div><h3>Megelőző egészségvédelem</h3><p>Rendszeres oltások, féregtelenítés, bolhakezelés és egészségügyi szűrővizsgálatok.</p></div>
-      <div class="card"><div class="ico">🏥</div><h3>Ambuláns ellátás és házi vizit</h3><p>Sürgős esetekben és hétvégén is elérhető állatorvosi ellátás, házi vizit Budapest területén.</p></div>
+      <div class="card"><div class="ico">🍕</div><h3>Kézzel nyújtott pizzák</h3><p>Hagyományos toszkán recept, friss olasz alapanyagok és fatüzű kemence adja a Pinocchio pizzák egyedi ízét.</p></div>
+      <div class="card"><div class="ico">🥗</div><h3>Saláták és tészták</h3><p>Friss saláták, házi pasta és olasz előételek a pizzák mellé – igazi olasz étterem-élmény.</p></div>
+      <div class="card"><div class="ico">📦</div><h3>Elvitelre és házhozszállítás</h3><p>Pizzáink elvitelre és futárszolgálaton keresztül is elérhetők – az olasz ízek az ajtóig jönnek.</p></div>
     </div>
   </div></section>
 
   <section class="block" style="background:var(--soft)"><div class="wrap">
     <div class="eyebrow">Rólunk</div>
-    <h2>A Tímár utcai rendelőről</h2>
-    <p style="max-width:680px;color:var(--muted);font-size:1.1rem">Dr. Röhricht Tamás vezetésével a rendelő hétköznapokon teljes körű ambuláns ellátást nyújt, hétvégén és ünnepnapokon házi vizit is kérhető.</p>
+    <h2>Egy megvalósult olasz mese Óbudán</h2>
+    <p style="max-width:680px;color:var(--muted);font-size:1.1rem">A Pinocchio az Óbudai Kórház szomszédságában, az Óbudai Egyetem közelében nyújtja a toszkán konyha legjobb fogásait.</p>
   </div></section>
 
   <section class="block" id="kapcsolat"><div class="wrap">
     <div class="contact">
-      <h2>Foglaljon időpontot!</h2>
-      <p>Hívjon minket, és segítünk a legmegfelelőbb időpontban ellátni kedvencét.</p>
-      <div class="big"><a href="tel:+36209240009">06 20 924 0009</a></div>
-      <div class="meta">1034 Budapest, Tímár u. 17b–19.</div>
+      <h2>Rendel vagy bejön?</h2>
+      <p>Hétfőtől szombatig 11:00–20:00 között várjuk Önt a Bécsi úton.</p>
+      <div class="big"><a href="tel:+36203184874">06 20 318 4874</a></div>
+      <div class="meta">1034 Budapest, Bécsi út 121.</div>
     </div>
   </div></section>
 
   <footer><div class="wrap">
-    Ez egy ingyenes <b>mintaoldal</b>, amelyet Állatorvosi Rendelő számára készített
+    Ez egy ingyenes <b>mintaoldal</b>, amelyet Pinocchio Pizzéria számára készített
     <a href="https://attila-hartmann.github.io/attila-website/?lang=hu" target="_blank" rel="noopener">Hartmann Attila</a>,
     webfejlesztő. &copy; 2026
   </div></footer>

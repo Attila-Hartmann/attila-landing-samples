@@ -1,83 +1,170 @@
 <!doctype html>
+<!--
+  ============================================================================
+  SAMPLE LANDING PAGE TEMPLATE  —  filled by the outreach agent, per business.
+  ============================================================================
+  Replace every {{TOKEN}} below with real, business-specific content, then save
+  the result to .tmp/prepared/<place_id>/index.html. Rules:
+
+  • Language: Hungarian. Natural, warm, professional — NOT robotic.
+  • Use ONLY public facts from the queue record (name, industry, city, rating,
+    review_count, phone, address). Do NOT invent prices, staff names, awards,
+    or hotlink the business's own photos/logos (licensing risk).
+  • #b91c1c : tasteful accent hex fitting the industry
+    (dental #0ea5b7, vet #0ea5b7, legal #1e3a8a, beauty #be185d, auto #b45309,
+     restaurant #b91c1c, pharmacy #047857, default #2563eb).
+  • RB : 1–2 UPPERCASE letters from the business name (e.g. "Oliva
+    Étterem" -> "O", "Wladár Kisállat Klinika" -> "WK"). Shown big in the hero card.
+  • 🍽️ : ONE tasteful emoji representing the trade, used as a faint
+    hero watermark AND the favicon (🐾 vet, 🦷 dental, 🍽️ restaurant, ☕ café,
+    💇 hair, 💅 beauty, 💊 pharmacy, ⚖️ legal, 🔧 auto). Pick something restrained.
+  • Flórián Repeta Bisztró Óbuda – 494 értékelés alapján ismert napi menüs étterem a Flórián Bevásárlóközpontban, Budapest III. kerület. : 1 sentence, ~150 chars, includes city + rating.
+  • ★ <b>3,9</b> · 494 Google értékelés : if review_count > 0 ->  "★ {rating} · {review_count} Google értékelés"
+                       else -> remove the whole <div class="badge">…</div> line.
+  • Kövessen minket: <a href="https://www.facebook.com/florianrepeta" target="_blank" rel="noopener">@florianrepeta</a> : if phone exists -> the tel: anchor shown below;
+                      else -> replace with an e-mail/contact line only.
+  • SERVICES: exactly 3 <div class="card"> blocks tailored to the industry, each
+    with a fitting emoji in <div class="ico">.
+  • Keep it a SAMPLE: leave the "Mintaoldal" ribbon and the footer credit intact.
+  • 2026 : current year.
+  ============================================================================
+-->
 <html lang="hu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flórián Repeta Bisztró — Budapest III. Flórián tér</title>
-<meta name="description" content="Napi menü és bisztrókonyha a Flórián téren, Óbudán. 494 Google-értékelés.">
+<title>Flórián Repeta Bisztró — Önkiszolgáló Étterem Budapest</title>
+<meta name="description" content="Flórián Repeta Bisztró Óbuda – 494 értékelés alapján ismert napi menüs étterem a Flórián Bevásárlóközpontban, Budapest III. kerület.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
+<!-- Link preview when the URL is shared in e-mail / messaging -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:title" content="Flórián Repeta Bisztró — Önkiszolgáló Étterem Budapest">
+<meta property="og:description" content="Flórián Repeta Bisztró Óbuda – 494 értékelés alapján ismert napi menüs étterem a Flórián Bevásárlóközpontban, Budapest III. kerület.">
+<meta name="twitter:card" content="summary">
 <style>
-  :root{--accent:#b91c1c;--ink:#0f172a;--muted:#64748b;--bg:#ffffff;--soft:#f1f5f9;--line:#e2e8f0;}
-  *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  .ribbon{position:fixed;top:14px;right:-46px;transform:rotate(45deg);background:var(--ink);color:#fff;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 60px;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-  header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:40}
+  :root{
+    --accent:#b91c1c;
+    --ink:#0f172a; --muted:#64748b; --bg:#ffffff; --soft:#f1f5f9; --line:#e2e8f0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .ribbon{position:fixed;top:14px;right:-46px;transform:rotate(45deg);background:var(--ink);
+          color:#fff;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+          padding:6px 60px;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+
+  /* Header */
+  header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);
+         border-bottom:1px solid var(--line);z-index:40}
   .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em}.logo span{color:var(--accent)}
-  .nav a.cta{background:var(--accent);color:#fff;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.92rem}
-  .hero{padding:84px 0 72px;background:radial-gradient(1200px 400px at 80% -10%, color-mix(in srgb,var(--accent) 16%,#fff), transparent),var(--bg)}
-  .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}
-  .hero h1 em{color:var(--accent);font-style:normal}.hero p.lead{font-size:1.18rem;color:var(--muted);max-width:620px;margin-top:18px}
-  .badge{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem}
-  .badge b{color:var(--accent)}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+  .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+  .logo span{color:var(--accent)}
+  .nav a.cta{background:var(--accent);color:#fff;padding:10px 18px;border-radius:999px;
+             font-weight:600;font-size:.92rem}
+
+  /* Hero — two columns: copy + a logo-free brand card */
+  .hero{padding:72px 0;background:
+        radial-gradient(1100px 420px at 85% -10%, color-mix(in srgb,var(--accent) 14%,#fff), transparent),
+        var(--bg)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(2rem,5vw,3.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:560px;margin-top:18px}
+  .badge{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:var(--soft);
+         border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem}
+  .badge b{color:var(--accent)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
   .btn{padding:14px 26px;border-radius:12px;font-weight:700;font-size:1rem;display:inline-block}
   .btn.primary{background:var(--accent);color:#fff;box-shadow:0 8px 24px color-mix(in srgb,var(--accent) 35%,transparent)}
   .btn.ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .brandcard{position:relative;width:100%;max-width:360px;aspect-ratio:1/1;margin-left:auto;
+             border-radius:28px;display:grid;place-items:center;overflow:hidden;
+             background:linear-gradient(145deg,var(--accent),color-mix(in srgb,var(--accent) 50%,#0f172a));
+             box-shadow:0 24px 60px color-mix(in srgb,var(--accent) 30%,transparent)}
+  .brandcard .mono{font-size:clamp(3.5rem,9vw,6.5rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em}
+  .brandcard .glyph{position:absolute;right:-8px;bottom:-12px;font-size:7rem;opacity:.16}
+
+  /* Sections */
   section.block{padding:72px 0}
   .eyebrow{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
   h2{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;letter-spacing:-.01em;margin:8px 0 14px}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
   .card{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:28px}
-  .card h3{font-size:1.15rem;margin-bottom:8px}.card p{color:var(--muted)}
-  .card .ico{width:46px;height:46px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,#fff);display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+  .card h3{font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted)}
+  .card .ico{width:46px;height:46px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,#fff);
+             display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+
+  /* Contact */
   .contact{background:var(--ink);color:#fff;border-radius:24px;padding:56px 40px;text-align:center;margin:40px 0}
-  .contact h2{color:#fff}.contact p{color:#cbd5e1;max-width:560px;margin:10px auto 28px}
-  .contact .big{font-size:1.5rem;font-weight:800}.contact .big a{color:#fff;border-bottom:2px solid var(--accent)}
+  .contact h2{color:#fff}
+  .contact p{color:#cbd5e1;max-width:560px;margin:10px auto 28px}
+  .contact .big{font-size:1.5rem;font-weight:800}
+  .contact .big a{color:#fff;border-bottom:2px solid var(--accent)}
   .meta{color:#94a3b8;margin-top:18px;font-size:.95rem}
+
   footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem;text-align:center}
   footer a{color:var(--accent);font-weight:600}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}.nav a.cta{display:none}}
+
+  @media(max-width:760px){
+    .hero .wrap{grid-template-columns:1fr}
+    .brandcard{display:none}
+    .grid{grid-template-columns:1fr}
+    .nav a.cta{display:none}
+  }
 </style>
 </head>
 <body>
   <div class="ribbon">Mintaoldal</div>
+
   <header><div class="wrap nav">
-    <div class="logo">Flórián <span>Repeta Bisztró</span></div>
+    <div class="logo">Flórián Repeta Bisztró</div>
     <a class="cta" href="#kapcsolat">Kapcsolat</a>
   </div></header>
 
   <section class="hero"><div class="wrap">
-    <h1>Napi menü és bisztrókonyha<br>a <em>Flórián téren</em></h1>
-    <p class="lead">Friss, megfizethetőre árazott fogások ebédidőben és este – a Repeta Bisztró hálózat óbudai tagja a Flórián tér 6-9. szám alatt.</p>
-    <div class="badge"><b>★ 3,9</b> · 494 Google értékelés</div>
-    <div class="hero-actions">
-      <a class="btn primary" href="#kapcsolat">Asztalfoglalás</a>
-      <a class="btn ghost" href="#szolgaltatasok">Étlapunk</a>
+    <div>
+      <h1>Napi friss fogások<br>a Flórián téren<br><em>Budapest</em></h1>
+      <p class="lead">A Flórián Repeta Bisztró a Flórián Bevásárlóközpontban kínál napi menüt és elviteles ételeket az óbudai vendégeknek.</p>
+      <div class="badge">★ <b>3,9</b> · 494 Google értékelés</div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#kapcsolat">Időpontot kérek</a>
+        <a class="btn ghost" href="#szolgaltatasok">Szolgáltatásaink</a>
+      </div>
+    </div>
+    <div class="brandcard" aria-hidden="true">
+      <span class="mono">RB</span>
+      <span class="glyph">🍽️</span>
     </div>
   </div></section>
 
   <section class="block" id="szolgaltatasok"><div class="wrap">
     <div class="eyebrow">Amit kínálunk</div>
-    <h2>Étlapunk</h2>
+    <h2>Szolgáltatásaink</h2>
     <div class="grid">
-      <div class="card"><div class="ico">🍜</div><h3>Napi friss menü</h3><p>Minden nap friss leves és főétel – változatos, otthonos ízek megfizethető áron, gyors kiszolgálással.</p></div>
-      <div class="card"><div class="ico">🥗</div><h3>Bisztrókonyha</h3><p>Saláták, könnyű ételek, bisztrós különlegességek – a klasszikus menza mellé egy kis modern twist.</p></div>
-      <div class="card"><div class="ico">🚚</div><h3>Házhozszállítás</h3><p>Rendelhető Wolton és Foodorán – az ebéd megérkezik az irodába vagy otthonra a Flórián tér környékén.</p></div>
+      <!-- AGENT: write exactly 3 industry-specific cards; pick a fitting emoji for each .ico -->
+      <div class="card"><div class="ico">🥘</div><h3>Napi menü</h3><p>Naponta frissen elkészített meleg ételek, leves és főfogás, változatos kínálattal.</p></div>
+      <div class="card"><div class="ico">🥗</div><h3>Saláták és hideg tálak</h3><p>Friss zöldségsaláták, savanyúságok és hideg feltétek a meleg fogások mellett.</p></div>
+      <div class="card"><div class="ico">📦</div><h3>Elvitelre és házhozszállítás</h3><p>Az ételek elvitelre is elérhetők – gyors, ízletes ebéd az iroda vagy otthon közeléből.</p></div>
     </div>
   </div></section>
 
   <section class="block" style="background:var(--soft)"><div class="wrap">
     <div class="eyebrow">Rólunk</div>
-    <h2>A Repeta Bisztró hálózat óbudai tagja</h2>
-    <p style="max-width:680px;color:var(--muted);font-size:1.1rem">A Flórián Repeta Bisztró Budapest III. kerületében, a Flórián tér 6-9. szám alatt fogadja a vendégeket. A 494 Google-értékelés jelzi, hogy az Óbuda-negyed dolgozói és lakói rendszeresen visszatérnek a friss, megfizethetően árazott ételekért.</p>
+    <h2>A Repeta Bisztró Flórián téren</h2>
+    <p style="max-width:680px;color:var(--muted);font-size:1.1rem">A Flórián tér közelében lévő önkiszolgáló bisztró gyors, megfizethető és ízletes ebédet kínál a bevásárlóközpont látogatóinak.</p>
   </div></section>
 
   <section class="block" id="kapcsolat"><div class="wrap">
     <div class="contact">
-      <h2>Foglaljon asztalt vagy rendeljen!</h2>
-      <p>Hívjon minket vagy keresse fel a bisztrót a Flórián téren – ahol mindig vár egy tányér meleg étel.</p>
-      <div class="big"><a href="tel:+36300183736">06 30 018 3736</a></div>
-      <div class="meta">Budapest, Flórián tér 6-9, 1033</div>
+      <h2>Ebédeljen velünk!</h2>
+      <p>Hétfőtől péntekig várjuk vendégeinket a Flórián Bevásárlóközpontban.</p>
+      <div class="big">Kövessen minket: <a href="https://www.facebook.com/florianrepeta" target="_blank" rel="noopener">@florianrepeta</a></div>
+      <div class="meta">1033 Budapest, Flórián tér 6–9.</div>
     </div>
   </div></section>
 
