@@ -195,6 +195,17 @@
   @media (max-width:520px){.bento{grid-template-columns:1fr}.tile.feature,.tile.wide{grid-column:span 1}}
   @media (prefers-reduced-motion:reduce){.hero-bg,.marquee div{animation:none!important}*{scroll-behavior:auto}}
 </style>
+<style>
+/* --- retro-fix 2026-08-27: duotone photo treatment + slate palette (appended, cascade-safe) --- */
+body[data-theme="slate"]{--accent:#5B6B73;--accent2:#C97A3D;--dark:#1C2226;--bg:#F3F2EE;--ink:#1E2226;--muted:#6B7278}
+.hero-bg{filter:grayscale(.8) contrast(1.12)}
+.hero-bg::before{content:"";position:absolute;inset:0;background:var(--accent);mix-blend-mode:color;opacity:.55}
+.tile.feature .fbg{filter:grayscale(.8) contrast(1.12)}
+.tile.feature .fbg::after{content:"";position:absolute;inset:0;background:var(--accent);mix-blend-mode:color;opacity:.5}
+.about .imgwrap{position:relative}
+.about .imgwrap img{filter:grayscale(.8) contrast(1.12)}
+.about .imgwrap::after{content:"";position:absolute;inset:0;background:var(--accent);mix-blend-mode:color;opacity:.5;pointer-events:none}
+</style>
 </head>
 <body data-theme="fresh">
   <div class="ribbon">Mintaoldal</div>

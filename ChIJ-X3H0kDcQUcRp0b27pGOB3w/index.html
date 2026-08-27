@@ -10,7 +10,7 @@
 <meta property="og:locale" content="hu_HU">
 <meta property="og:title" content="R2 Hair — Fodrászat Budapest">
 <meta property="og:description" content="R2 Hair fodrászat a budapesti Belvárosban, a Régi posta utcában. 4,7 csillagos Google-értékelés, 68 vélemény. Modern hajvágás, festés és styling egy helyen.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70">
+<meta property="og:image" content="https://images.unsplash.com/photo-1781450090585-1a511b7066d9?auto=format&fit=crop&w=1600&q=70">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,6 +151,17 @@
   @media (max-width:520px){.bento{grid-template-columns:1fr}.tile.feature,.tile.wide{grid-column:span 1}}
   @media (prefers-reduced-motion:reduce){.hero-bg,.marquee div{animation:none!important}*{scroll-behavior:auto}}
 </style>
+<style>
+/* --- retro-fix 2026-08-27: duotone photo treatment + slate palette (appended, cascade-safe) --- */
+body[data-theme="slate"]{--accent:#5B6B73;--accent2:#C97A3D;--dark:#1C2226;--bg:#F3F2EE;--ink:#1E2226;--muted:#6B7278}
+.hero-bg{filter:grayscale(.8) contrast(1.12)}
+.hero-bg::before{content:"";position:absolute;inset:0;background:var(--accent);mix-blend-mode:color;opacity:.55}
+.tile.feature .fbg{filter:grayscale(.8) contrast(1.12)}
+.tile.feature .fbg::after{content:"";position:absolute;inset:0;background:var(--accent);mix-blend-mode:color;opacity:.5}
+.about .imgwrap{position:relative}
+.about .imgwrap img{filter:grayscale(.8) contrast(1.12)}
+.about .imgwrap::after{content:"";position:absolute;inset:0;background:var(--accent);mix-blend-mode:color;opacity:.5;pointer-events:none}
+</style>
 </head>
 <body data-theme="rose">
   <div class="ribbon">Mintaoldal</div>
@@ -162,7 +173,7 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=70')"></div>
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1781450090585-1a511b7066d9?auto=format&fit=crop&w=1600&q=70')"></div>
     <div class="wrap">
       <div class="eyebrow" data-reveal>Belváros · Fodrászat</div>
       <h1 data-reveal>Új frizura, <em>nyugodt</em> kézben</h1>
@@ -190,7 +201,7 @@
     <h2 class="lead-h" data-reveal>Minőség, amire <em>számíthat</em></h2>
     <div class="bento">
       <div class="tile feature" data-reveal>
-        <div class="fbg" style="background-image:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=70')"></div>
+        <div class="fbg" style="background-image:url('https://images.unsplash.com/photo-1759134198561-e2041049419c?auto=format&fit=crop&w=900&q=70')"></div>
         <div class="ftxt"><h3>Hajvágás &amp; formázás</h3><p>Női és férfi hajvágás, az arcformához és a hétköznapjaihoz igazítva, alapos konzultációval.</p></div>
       </div>
       <div class="tile" data-reveal><div class="ico">🎨</div><h3>Színezés &amp; melír</h3><p>Tartós festés, melír és balayage, természetes, Önre szabott árnyalatokkal.</p></div>
@@ -201,7 +212,7 @@
 
   <!-- ABOUT -->
   <section class="block" style="background:color-mix(in srgb,var(--ink) 3%,var(--bg))"><div class="wrap about">
-    <div class="imgwrap"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=70" alt="R2 Hair" loading="lazy" data-img-reveal></div>
+    <div class="imgwrap"><img src="https://images.unsplash.com/photo-1695527081848-1e46c06e6458?auto=format&fit=crop&w=900&q=70" alt="R2 Hair" loading="lazy" data-img-reveal></div>
     <div>
       <div class="eyebrow" data-reveal>Rólunk</div>
       <h2 class="lead-h" data-reveal>Egy szalon a Régi posta utcában</h2>
